@@ -2,6 +2,7 @@
     os_server:
       cloud: ospcloud
       name: "{{ instance_name }}"
+      state: present
       image: rhel-guest
       meta: "group={{ group }},deployment_name={{ deployment }}"
       flavor: m2.small
