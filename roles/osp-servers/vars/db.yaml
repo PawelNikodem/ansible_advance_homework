@@ -1,5 +1,5 @@
 ---
 instance_name: db
 group: appdbs
-deployment: dev
+deployment: QA
 security_group_name: db
