@@ -1,5 +1,4 @@
-  ---
-  
+---
   - name: Create a server instance
     os_server:
       cloud: ospcloud
