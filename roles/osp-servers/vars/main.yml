@@ -2,7 +2,7 @@
 # vars file for osp.servers
 #osp_servers:
 frontend:
-  name: frontend
+    name: frontend
     state: present
     image: rhel-guest
     key_name: ansible_ssh
