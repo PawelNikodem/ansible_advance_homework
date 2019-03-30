@@ -2,4 +2,4 @@
 instance_name: app2
 group: apps
 deployment: dev
-security_group_name: app_servers
+security_group_name: apps
