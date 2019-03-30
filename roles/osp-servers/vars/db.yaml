@@ -1,4 +1,4 @@
 ---
-name: db
+server_name: db
 security_group: db
 meta_group: appdbs
