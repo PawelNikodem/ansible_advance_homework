@@ -1,10 +1,10 @@
 - hosts: workstation
   become: yes
-  roles:
-     - osp-network
-     - osp-keypair
-     - osp-securitygroup
-     - osp-flavor
+#  roles:
+#     - osp-network
+#     - osp-keypair
+#     - osp-securitygroup
+#     - osp-flavor
   tasks:
 ##Create Fronend Instance
   - name: Create frontend instance
