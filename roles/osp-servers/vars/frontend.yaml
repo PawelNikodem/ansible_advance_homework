@@ -1,0 +1,4 @@
+---
+name: frontend
+security_group: frontend
+meta_group: frontends
