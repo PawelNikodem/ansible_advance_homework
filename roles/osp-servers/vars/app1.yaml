@@ -1,4 +1,5 @@
 ---
-server_: app1
-security_group: apps
-meta_group: apps
+instance_name: app1
+group: apps
+deployment: dev
+security_group_name: app_servers
