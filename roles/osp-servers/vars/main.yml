@@ -1,7 +1,8 @@
 ---
-# vars file for osp.servers
-    state: present
-    image: rhel-guest
-    flavor: m2.small
-    key_name: ansible_ssh
-    meta_deployment_name: QA
+# vars file for osp-instances
+    webserver_name: web1
+    databaseserver_name: db1
+    flavor_name: m1.small
+    webserver_group: webservers
+    database_group: databaseservers
+    deployment: dev
