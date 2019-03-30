@@ -1,7 +1,7 @@
 ---
 # vars file for osp.servers
-#osp_servers:
-frontend:
+osp_servers:
+  frontend:
     name: frontend
     state: present
     image: rhel-guest
@@ -11,7 +11,7 @@ frontend:
     meta_group: frontends
     meta_deployment_name: QA
 
-app1:
+  app1:
     name: app1
     state: present
     image: rhel-guest
@@ -21,7 +21,7 @@ app1:
     meta_group: apps
     meta_deployment_name: QA
 
-app2:
+  app2:
     name: app2
     state: present
     image: rhel-guest
@@ -31,7 +31,7 @@ app2:
     meta_group: apps
     meta_deployment_name: QA
 
-db:
+  db:
     name: db
     state: present
     image: rhel-guest
