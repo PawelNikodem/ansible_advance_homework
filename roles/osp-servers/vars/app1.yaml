@@ -1,4 +1,4 @@
 ---
-name: app1
+server_: app1
 security_group: apps
 meta_group: apps
