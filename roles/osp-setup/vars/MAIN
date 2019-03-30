@@ -1,8 +1,0 @@
----
-# vars file for osp_servers
-    frontend_name: frontend
-    app1_name: app1
-    app2_name: app2
-    db_name: db
-    flavor_name: m2.small
-    meta_deployment_name: QA
