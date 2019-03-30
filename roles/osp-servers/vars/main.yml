@@ -1,8 +1,8 @@
 ---
 # vars file for osp.servers
-#osp_servers:
+osp_servers:
   frontend:
-    name: frontend
+  - name: frontend
     state: present
     image: rhel-guest
     key_name: ansible_ssh
@@ -12,7 +12,7 @@
     meta_deployment_name: QA
 
   app1:
-    name: app1
+  - name: app1
     state: present
     image: rhel-guest
     key_name: ansible_ssh
@@ -22,7 +22,7 @@
     meta_deployment_name: QA
 
   app2:
-    name: app2
+  - name: app2
     state: present
     image: rhel-guest
     key_name: ansible_ssh
@@ -32,7 +32,7 @@
     meta_deployment_name: QA
 
   db:
-    name: db
+  - name: db
     state: present
     image: rhel-guest
     key_name: ansible_ssh
