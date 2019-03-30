@@ -1,0 +1,4 @@
+---
+name: app1
+security_group: apps
+meta_group: apps
