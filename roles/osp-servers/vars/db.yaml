@@ -1,0 +1,4 @@
+---
+name: db
+security_group: db
+meta_group: appdbs
