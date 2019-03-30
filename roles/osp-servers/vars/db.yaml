@@ -1,4 +1,5 @@
 ---
-server_name: db
-security_group: db
-meta_group: appdbs
+instance_name: db
+group: appdbs
+deployment: dev
+security_group_name: db_servers
