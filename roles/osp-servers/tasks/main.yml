@@ -4,34 +4,34 @@
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
     cloud: ospcloud
-    state: "{{ item.state }}"
-    name: "{{ item.name }}"
+    state: "{{ item.value.state }}"
+    name: "{{ item.value.name }}"
     image: rhel-guest
-    meta: "group: {{ item.meta_group }},deployment_name: {{ item.meta_deployment_name }}"
+    meta: "group: {{ item.value.meta_group }},deployment_name: {{ item.value.meta_deployment_name }}"
     flavor: m2.small
-    security_groups: "{{ item.security_group }}"
+    security_groups: "{{ item.value.security_group }}"
     key_name: ansible_ssh
     wait: yes
     nics:
     - net-name: int_network
-  loop: "{{ frontend }}"
+  loop: "{{ osp_servers }}"
 
 - name: Add floating IP to Servers
   os_floating_ip:
     cloud: ospcloud
     state: present
     reuse: yes
-    server: "{{ item.name }}"
+    server: "{{ item.value.name }}"
     network: ext_network
     wait: true
     timeout: 180
-  loop: "{{ frontend }}" 
+  loop: "{{ osp_servers }}" 
 
 - name: Wait for server to be available
   wait_for:
-    host: "{{ item.name }}"
+    host: "{{ item.value.name }}"
     port: 22
     search_regex: OpenSSH
     timeout: 600
-  delegate_to: "{{ item.state }}"
-  loop: "{{ frontend }}"
+  delegate_to: "{{ item.value.state }}"
+  loop: "{{ osp_servers }}"
