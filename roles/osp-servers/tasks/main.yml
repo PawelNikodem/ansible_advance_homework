@@ -16,22 +16,22 @@
     - net-name: int_network
   loop: "{{ frontend }}"
 
-#- name: Add floating IP to Servers
-#  os_floating_ip:
-#    cloud: ospcloud
-#    state: present
-#    reuse: yes
-#    server: "{{ item.name }}"
-#    network: ext_network
-#    wait: true
-#    timeout: 180
-#  loop: "{{ osp_servers }}" 
+- name: Add floating IP to Servers
+  os_floating_ip:
+    cloud: ospcloud
+    state: present
+    reuse: yes
+    server: "{{ item.name }}"
+    network: ext_network
+    wait: true
+    timeout: 180
+  loop: "{{ frontend }}" 
 
-#- name: Wait for server to be available
-#  wait_for:
-#    host: "{{ item.name }}"
-#    port: 22
-#    search_regex: OpenSSH
-#    timeout: 600
-#  delegate_to: "{{ item.state }}"
-#  loop: "{{ osp_servers }}"
+- name: Wait for server to be available
+  wait_for:
+    host: "{{ item.name }}"
+    port: 22
+    search_regex: OpenSSH
+    timeout: 600
+  delegate_to: "{{ item.state }}"
+  loop: "{{ frontend }}"
