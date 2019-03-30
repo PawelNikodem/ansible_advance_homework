@@ -14,7 +14,7 @@
     wait: yes
     nics:
     - net-name: int_network
-  loop: "{{ frontend }}"
+  loop: "{{ osp_servers }}"
 
 #- name: Add floating IP to Servers
 #  os_floating_ip:
