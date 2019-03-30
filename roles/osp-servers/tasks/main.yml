@@ -3,7 +3,7 @@
   - name: Create a server instance
     os_server:
       cloud: ospcloud
-      name: "{{ name }}"
+      name: "{{ server_name }}"
       image: rhel-guest
       meta: "group={{ meta_group }},deployment_name={{ meta_deployment_name }}"
       flavor: m2.small
@@ -19,19 +19,19 @@
         curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
         cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
     register: instanceip
-  - name: Add floating IP to "{{ name }}"
+  - name: Add floating IP to "{{ server_name }}"
     os_floating_ip:
       cloud: ospcloud
       state: present
       reuse: yes
-      server: "{{ name }}"
+      server: "{{ server_name }}"
       network: ext_network
       wait: true
       timeout: 180
     register: instancefloatingip
   - name: Show "{{ instanceip }}" public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
-  - name: Wait for "{{ iname }}" to be available
+  - name: Wait for "{{ server_name }}" to be available
     wait_for:
       host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
       port: 22
