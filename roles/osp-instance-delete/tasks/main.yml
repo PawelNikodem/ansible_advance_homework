@@ -4,7 +4,7 @@
   os_server_facts:
     cloud: ospcloud
 
-- debug
+- debug:
     var: openstack_servers
     
     
