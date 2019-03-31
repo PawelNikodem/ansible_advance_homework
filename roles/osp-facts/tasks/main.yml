@@ -4,10 +4,12 @@
      os_server_facts:
        cloud: ospcloud
        region_name: RegionOne
+   - debug:
+       var: openstack_servers
      register: result
    - name: Add host
      add_host:
-       name: "{{ item.server }}"
+       name: "{{ item.public_v4 }}"
        group: "{{ item.metadata.group }}"
        ansible_ssh_private_key_file: ~/.ssh/openstack.pem
        ansible_ssh_user: cloud-user
