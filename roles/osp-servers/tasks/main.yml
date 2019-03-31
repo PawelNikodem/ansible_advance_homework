@@ -29,4 +29,4 @@
       port: 22
       search_regex: OpenSSH
       timeout: 600
-    delegate_to: "{{ instance_name }}"
+    delegate_to: "{{ inventory_hostname }}"
