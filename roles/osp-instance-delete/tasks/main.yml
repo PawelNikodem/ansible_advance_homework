@@ -1,29 +1,29 @@
 ---
 # tasks file for osp-facts
-   - name: Fetch Instance Info
-     os_server_facts:
-       cloud: ospcloud
-       region_name: RegionOne
-     register: result
+- name: Fetch Instance Info
+  os_server_facts:
+    cloud: ospcloud
+    region_name: RegionOne
+  register: result
        
-   - name: Add host
-     add_host:
-       name: "{{ item.public_v4 }}"
-       group: "{{ item.metadata.group }}"
-       ansible_ssh_private_key_file: ~/.ssh/openstack.pem
-       ansible_ssh_user: cloud-user
-     with_items: "{{result.ansible_facts.openstack_servers}}"
+- name: Add host
+  add_host:
+    name: "{{ item.public_v4 }}"
+    group: "{{ item.metadata.group }}"
+    ansible_ssh_private_key_file: ~/.ssh/openstack.pem
+    ansible_ssh_user: cloud-user
+  with_items: "{{result.ansible_facts.openstack_servers}}"
      
-   - name: Remove floating IP to "{{ instance_name }}"
-     os_floating_ip:
-       cloud: ospcloud
-       state: absent
-       server: "{{ instance_name }}"
-       key_name: ansible_ssh
+- name: Remove floating IP to "{{ instance_name }}"
+  os_floating_ip:
+    cloud: ospcloud
+    state: absent
+    server: "{{ instance_name }}"
+    key_name: ansible_ssh
 
-   - name: Remove a server instance "{{ instance_name }}"
-       os_server:
-       cloud: ospcloud
-       name: "{{ instance_name }}"
-       state: absent
-       key_name: ansible_ssh
+- name: Remove a server instance "{{ instance_name }}"
+  os_server:
+    cloud: ospcloud
+    name: "{{ instance_name }}"
+    state: absent
+    key_name: ansible_ssh
