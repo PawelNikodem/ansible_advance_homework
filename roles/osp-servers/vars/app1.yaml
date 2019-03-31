@@ -1,5 +1,5 @@
 ---
 instance_name: app1
-group: apps
-deployment: QA
+group_name: apps
+deployment_name: QA
 security_group_name: apps
