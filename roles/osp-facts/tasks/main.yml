@@ -4,9 +4,11 @@
      os_server_facts:
        cloud: ospcloud
        region_name: RegionOne
-   - debug:
-       var: openstack_servers
      register: result
+
+- debug:
+       var: openstack_servers
+       
    - name: Add host
      add_host:
        name: "{{ item.public_v4 }}"
