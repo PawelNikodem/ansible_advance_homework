@@ -19,9 +19,11 @@
        cloud: ospcloud
        state: absent
        server: "{{ instance_name }}"
+       key_name: ansible_ssh
 
    - name: Remove a server instance "{{ instance_name }}"
        os_server:
        cloud: ospcloud
        name: "{{ instance_name }}"
        state: absent
+       key_name: ansible_ssh
