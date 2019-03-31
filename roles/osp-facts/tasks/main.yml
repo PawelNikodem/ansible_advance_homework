@@ -5,9 +5,6 @@
        cloud: ospcloud
        region_name: RegionOne
      register: result
-
-   - debug:
-     var: openstack_servers
        
    - name: Add host
      add_host:
