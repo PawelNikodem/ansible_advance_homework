@@ -22,3 +22,11 @@
   
   - name: Show "{{ instance_name }}" public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
+
+  - name: Wait for "{{ instance_name }}" to be available
+    wait_for:
+      host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
+      port: 22
+      search_regex: OpenSSH
+      timeout: 600
+    delegate_to: "{{ inventory_hostname }}"
