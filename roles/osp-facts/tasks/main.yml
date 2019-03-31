@@ -7,7 +7,7 @@
      register: result
    - name: Add host
      add_host:
-       name: "{{ item.public_v4 }}"
+       name: "{{ item.hostname }}"
        group: "{{ item.metadata.group }}"
        ansible_ssh_private_key_file: ~/.ssh/openstack.pem
        ansible_ssh_user: cloud-user
