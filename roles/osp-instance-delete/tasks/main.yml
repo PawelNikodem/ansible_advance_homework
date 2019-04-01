@@ -12,6 +12,7 @@
     state: absent
 #    loating_ip_address: 203.0.113.2
     server: "{{ instance_name }}"
+    ignore_errors: yes
 
 # Deletes an instance via its ID
 - name: remove an instance
