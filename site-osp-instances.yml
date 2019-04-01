@@ -7,12 +7,12 @@
     include_role:
        name: osp-servers
        vars_from: frontend.yaml
-##Create App1 server 
+##Create apps server 
   - name: Create apps instance
     include_role:
        name: osp-servers
        vars_from: apps.yaml
-##Create App2 server
+##Create appdbs server
   - name: Create appdbs instance
     include_role:
        name: osp-servers
