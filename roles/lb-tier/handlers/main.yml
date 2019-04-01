@@ -1,2 +1,6 @@
 ---
-# handlers file for lb-tier
+
+- name: start {{ payload }}
+  service:
+    name: tomcat
+    state: started
