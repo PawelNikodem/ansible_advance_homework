@@ -7,16 +7,15 @@
   register: result
 
 # Detach a floating IP address from a server
-- name: remove floating ip for  "{{ instance_name }}"
+- name: Remove floating ip for  "{{ instance_name }}"
   os_floating_ip:
     cloud: ospcloud
     state: absent
-#    loating_ip_address: 203.0.113.2
     server: "{{ instance_name }}"
   ignore_errors: yes
 
 # Deletes an instance via its ID
-- name: remove an instance "{{ instance_name }}"
+- name: Remove an instance "{{ instance_name }}"
   os_server:
     name: "{{ instance_name }}"
     state: absent
