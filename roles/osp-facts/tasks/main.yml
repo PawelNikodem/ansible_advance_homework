@@ -5,7 +5,7 @@
        cloud: ospcloud
        region_name: RegionOne
      register: result
-     debug:
+   - debug:
        msg: "{{ result }}"
        
    - name: Add host
