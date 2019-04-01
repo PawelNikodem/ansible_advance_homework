@@ -6,7 +6,7 @@
        region_name: RegionOne
      register: result
    - debug:
-       msg: "{{ openstack_servers }}"
+       msg: "{{ result.ansible_facts.openstack_servers }}"
        
    - name: Add host
      add_host:
