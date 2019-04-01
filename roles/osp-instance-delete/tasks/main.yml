@@ -8,10 +8,10 @@
 
 # Detach a floating IP address from a server
 - os_floating_ip:
-     cloud: ospcloud
-     state: absent
-#     floating_ip_address: 203.0.113.2
-     server: db
+    cloud: ospcloud
+    state: absent
+#    loating_ip_address: 203.0.113.2
+    server: db
 
 # Deletes an instance via its ID
 - name: remove an instance
