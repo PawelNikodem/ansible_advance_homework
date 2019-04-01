@@ -1,0 +1,5 @@
+---
+instance_name: apps
+group_name: apps
+deployment_name: QA
+security_group_name: apps
