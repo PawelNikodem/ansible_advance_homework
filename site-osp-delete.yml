@@ -8,17 +8,19 @@
        name: osp-instance-delete
        vars_from: frontend.yaml
 ##Deletes App1 server 
-  - name: Create app1 instance
+  - name: Create apps instance
     include_role:
        name: osp-instance-delete
-       vars_from: app1.yaml
+       vars_from: apps.yaml
 ##Deletes App2 server
-  - name: Create app2 instance
+  - name: Create appdbs instance
     include_role:
        name: osp-instance-delete
-       vars_from: app2.yaml
-##Deletes DB server
-  - name: Create db instance
-    include_role:
-       name: osp-instance-delete
-       vars_from: db.yaml
+       vars_from: appdbs.yaml
+       
+##Deletes Additional server
+#  - name: Create Additional instance
+#    include_role:
+#       name: osp-instance-delete
+# Prepare vars for Addtional server to remove
+#       vars_from: Additional.yaml
