@@ -6,16 +6,15 @@
     region_name: RegionOne
   register: result
 
-- name: Remove floating IP to db
-  os_floating_ip:
-    cloud: ospcloud
-    state: absent
-    server: db
-    key_name: ansible_ssh
+# Detach a floating IP address from a server
+- os_floating_ip:
+     cloud: ospcloud
+     state: absent
+#     floating_ip_address: 203.0.113.2
+     server: db
 
-- name: Remove a server instance db
+# Deletes an instance via its ID
+- name: remove an instance
   os_server:
-    cloud: ospcloud
     name: db
     state: absent
-    key_name: ansible_ssh
