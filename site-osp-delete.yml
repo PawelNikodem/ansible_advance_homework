@@ -21,4 +21,4 @@
   - name: Create db instance
     include_role:
        name: osp-instance-delete
-vars_from: db.yaml
+       vars_from: db.yaml
