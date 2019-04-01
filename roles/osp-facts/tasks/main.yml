@@ -6,7 +6,7 @@
        region_name: RegionOne
      register: result
    - debug:
-       msg: "{{ result }}"
+       msg: "{{ openstack_servers }}"
        
    - name: Add host
      add_host:
