@@ -11,10 +11,10 @@
     cloud: ospcloud
     state: absent
 #    loating_ip_address: 203.0.113.2
-    server: db
+    server: "{{ instance_name }}"
 
 # Deletes an instance via its ID
 - name: remove an instance
   os_server:
-    name: db
+    name: "{{ instance_name }}"
     state: absent
