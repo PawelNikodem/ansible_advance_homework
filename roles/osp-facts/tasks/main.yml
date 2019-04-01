@@ -6,7 +6,8 @@
        region_name: RegionOne
      register: result
      
-   - debug: msg="{{ result.stdout }}"
+   - debug: 
+       msg: "{{ result.stdout }}"
        
    - name: Add host
      add_host:
