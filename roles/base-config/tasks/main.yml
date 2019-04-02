@@ -24,4 +24,4 @@
     state: latest
   with_items:
     - httpie
-- python-pip
+    - python-pip
