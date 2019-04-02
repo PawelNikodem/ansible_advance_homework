@@ -1,5 +1,7 @@
 - hosts: workstation
   gather_facts: true
+  cloud: ospcloud
+  key_name: ansible_ssh
   roles:
   - name: osp-facts
 
