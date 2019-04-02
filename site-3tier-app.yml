@@ -1,8 +1,7 @@
 - hosts: workstation
   gather_facts: true
-  cloud: ospcloud
-  key_name: ansible_ssh
-  roles:
+
+roles:
   - name: osp-facts
 
 # Setup front-end load balancer tier
