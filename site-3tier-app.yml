@@ -4,7 +4,7 @@
   roles:
     - name: osp-facts
 
-# Setup front-end load balancer tier
+# Setup front-end load balancer tier "{{ ansible_env.USER }}"
 
 
 - name: setup load-balancer tier
