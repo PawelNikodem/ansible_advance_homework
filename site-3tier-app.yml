@@ -10,6 +10,8 @@
 - name: setup load-balancer tier
   hosts: frontends
   become: yes
+  ansible_ssh_private_key_file: ~/.ssh/openstack.pem
+  ansible_ssh_user: cloud-user
   roles:
     - {name: base-config, tags: base-config}
 #    - {name: lb-tier, tags: [lbs, haproxy]}
