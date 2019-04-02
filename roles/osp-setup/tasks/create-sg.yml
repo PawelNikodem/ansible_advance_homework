@@ -49,7 +49,7 @@
 - name: Create Security Group Rule DB
   os_security_group_rule:
     cloud: ospcloud
-    security_group: db
+    security_group: appdbs
     protocol: tcp
     port_range_min: "{{ item.port }}"
     port_range_max: "{{ item.port }}" 
