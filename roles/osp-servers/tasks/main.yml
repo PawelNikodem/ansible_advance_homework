@@ -25,6 +25,7 @@
   
   - name: Start a server insance "{{ instance_name }}"
     os_server_action:
+      cloud: ospcloud
       action: start
       server: "{{ instance_name }}"
       timeout: 200
