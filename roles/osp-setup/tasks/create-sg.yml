@@ -43,7 +43,7 @@
   os_security_group:
     cloud: ospcloud
     state: present
-    name: db
+    name: appdbs
     description: ports_open
 
 - name: Create Security Group Rule DB
