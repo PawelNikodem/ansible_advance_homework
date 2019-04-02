@@ -26,7 +26,6 @@
   - name: Start a server insance "{{ instance_name }}"
     os_server_action:
       action: start
-      key_name: ansible_ssh
       server: "{{ instance_name }}"
       timeout: 200
   
