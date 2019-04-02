@@ -7,8 +7,6 @@
     regexp: '^Defaults\s*requiretty'
     replace: 'Defaults  !requiretty'
     backup: yes
-    ansible_ssh_private_key_file: ~/.ssh/openstack.pem
-    ansible_ssh_user: cloud-user
 
 - name: enable repos
   template:
