@@ -23,12 +23,12 @@
       timeout: 180
     register: instancefloatingip
   
-  #- name: Start a server insance "{{ instance_name }}"
-  #  os_server_action:
-  #    cloud: ospcloud
-  #    action: start
-  #    server: "{{ instance_name }}"
-  #    timeout: 200
+  - name: Start a server insance "{{ instance_name }}"
+    os_server_action:
+      cloud: ospcloud
+      action: start
+      server: "{{ instance_name }}"
+      timeout: 200
   
   - name: Show "{{ instance_name }}" public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
