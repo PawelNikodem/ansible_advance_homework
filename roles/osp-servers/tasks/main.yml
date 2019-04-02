@@ -23,7 +23,7 @@
       timeout: 180
     register: instancefloatingip
   
-  - Start a serwer insance "{{ instance_name }}"
+  - name: Start a serwer insance "{{ instance_name }}"
     os_server_action:
       action: start
       key_name: ansible_ssh
