@@ -1,0 +1,5 @@
+---
+- hosts: workstation
+  tasks:
+    - name: debug through ansible.env
+      debug: var=ansible_env.USER
