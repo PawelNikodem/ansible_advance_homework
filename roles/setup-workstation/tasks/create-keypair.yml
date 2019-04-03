@@ -7,5 +7,5 @@
   os_keypair:
     cloud: ospcloud
     state: present
-    name: ansible_ssh
+    name: ansible_ssh_check
     public_key_file: "{{ ansible_env.HOME }}/.ssh/MitziCom_id_rsa.pub"
