@@ -7,5 +7,9 @@
       os_server_action:
         cloud: ospcloud
         action: start
-        server: frontend
+        server: "{{ item }}"
         timeout: 200
+      loop:
+        - frontend
+        - apps
+        - appdbs
