@@ -1,3 +1,4 @@
+---
 - hosts: workstation
   become: yes
   tasks:
@@ -7,7 +8,7 @@
       action: start
       server: "{{ item }}"
       timeout: 200
-    with_item
+    with_item:
       - frontend
       - apps
       - appdbs
