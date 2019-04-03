@@ -3,13 +3,9 @@
   become: yes
   
   tasks:
-    - name: Start a server insance "{{ item }}"
+    - name: Start a server insance
         os_server_action:
             cloud: ospcloud
             action: start
-            server: "{{ item }}"
+            server: frontend
             timeout: 200
-        loop:
-            - frontend
-            - apps
-            - appdbs
