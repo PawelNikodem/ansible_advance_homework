@@ -1,11 +1,11 @@
 ---
 - hosts: workstation
   become: yes
-  
+    
   tasks:
     - name: Start a server insance
-        os_server_action:
-            cloud: ospcloud
-            action: start
-            server: frontend
-            timeout: 200
+      os_server_action:
+        cloud: ospcloud
+        action: start
+        server: frontend
+        timeout: 200
