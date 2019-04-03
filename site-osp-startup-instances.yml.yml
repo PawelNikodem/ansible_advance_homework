@@ -9,7 +9,7 @@
             action: start
             server: "{{ item }}"
             timeout: 200
-        with_item:
+        loop:
             - frontend
             - apps
             - appdbs
