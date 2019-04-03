@@ -1,0 +1,13 @@
+- hosts: workstation
+  become: yes
+  tasks:
+  - name: Start a server insance "{{ item }}"
+    os_server_action:
+      cloud: ospcloud
+      action: start
+      server: "{{ item }}"
+      timeout: 200
+    with_item
+      - frontend
+      - apps
+      - appdbs
