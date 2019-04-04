@@ -2,11 +2,10 @@
   user:
     name: cloud-user
     generate_ssh_key: yes
-    ssh_key_file: /home/cloud-user/.ssh/openstack.pem
+    ssh_key_file: .ssh/openstack.pem
 - name: Create OSP keypair
   os_keypair:
     cloud: ospcloud
     state: present
     name: ansible_ssh
-#    public_key_file: "{{ ansible_env.HOME }}/.ssh/openstack.pub"
-    public_key_file: /home/cloud-user/.ssh/openstack.pub
+    public_key_file: "{{ ansible_env.HOME }}/.ssh/openstack.pub"
