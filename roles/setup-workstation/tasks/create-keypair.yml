@@ -1,11 +1,12 @@
 - name: Generate key files
   user:
-    name: "{{ ansible_env.USER }}"
-    generate_ssh_key: yes
-    ssh_key_file: .ssh/MitziCom_id_rsa
+    name: cloud-user
+    generate_ssh_key: no
+    ssh_key_file: .ssh/openstack.pem
 - name: Create OSP keypair
   os_keypair:
     cloud: ospcloud
     state: present
-    name: ansible_ssh_check
-    public_key_file: "{{ ansible_env.HOME }}/.ssh/MitziCom_id_rsa.pub"
+    name: ansible_ssh
+#    public_key_file: "{{ ansible_env.HOME }}/.ssh/openstack.pub"
+    public_key_file: /home/cloud-user/.ssh/openstack.pub"
