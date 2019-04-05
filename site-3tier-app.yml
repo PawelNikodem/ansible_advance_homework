@@ -8,7 +8,7 @@
 
 
 - name: setup load-balancer tier "{{ ansible_env.USER }}"
-  hosts: frontends
+  hosts: frontend
   become: yes
   roles:
     - {name: base-config, tags: base-config}
