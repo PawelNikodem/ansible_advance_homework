@@ -1,7 +1,5 @@
 ---
-instance_name: 
-  - app1
-  - app2
+instance_name: app1
 group_name: apps
 deployment_name: QA
 security_group_name: apps
