@@ -1,2 +1,5 @@
 ---
-# tasks file for app-tier
+- name: install base tools and packages
+  yum:
+    name: httpd 
+    state: latest
