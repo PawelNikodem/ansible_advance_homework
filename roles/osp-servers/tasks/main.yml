@@ -16,10 +16,8 @@
         {%- raw -%}#!/bin/bash
         curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
         cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-        {% endraw %}
-    loop: "{{ instance_name }}"
-      
-  - name: Add floating IP
+        {% endraw %}      
+
     os_floating_ip:
       cloud: ospcloud
       state: present
@@ -29,21 +27,8 @@
       wait: true
       timeout: 180
     register: instancefloatingip
-    loop: "{{ instance_name }}"
-  
-  - name: Start a server insance
-    os_server_action:
-      cloud: ospcloud
-      action: start
-      server: "{{ item }}"
-      timeout: 100
-    loop: "{{ instance_name }}"
-  
-  - name: Show public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
-    loop: "{{ instance_name }}"
-  
-  - name: Wait for server to be available
+ 
     wait_for:
       host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
       port: 22
