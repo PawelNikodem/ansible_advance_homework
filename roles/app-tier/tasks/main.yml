@@ -4,6 +4,13 @@
     name: httpd 
     state: latest
     
+- lineinfile:
+    path: /etc/httpd/conf/httpd.conf
+    regexp: '^Listen '
+    insertafter: '^#Listen '
+    line: 'Listen 8080'
+    
+    
 - name: start httpd
   service:
     name: httpd
