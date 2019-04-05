@@ -1,4 +1,4 @@
-  - name: Create a server instance "{{ item }}"
+  - name: Create a server instance
 #    ignore_errors: yes
     os_server:
       cloud: ospcloud
@@ -19,7 +19,7 @@
         {% endraw %}
     loop: "{{ instance_name }}"
       
-  - name: Add floating IP to "{{ item }}"
+  - name: Add floating IP
     os_floating_ip:
       cloud: ospcloud
       state: present
@@ -31,7 +31,7 @@
     register: instancefloatingip
     loop: "{{ instance_name }}"
   
-  - name: Start a server insance "{{ item }}"
+  - name: Start a server insance
     os_server_action:
       cloud: ospcloud
       action: start
@@ -39,11 +39,11 @@
       timeout: 100
     loop: "{{ instance_name }}"
   
-  - name: Show "{{ item }}" public IP
+  - name: Show public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
     loop: "{{ instance_name }}"
   
-  - name: Wait for "{{ item }}" to be available
+  - name: Wait for server to be available
     wait_for:
       host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
       port: 22
