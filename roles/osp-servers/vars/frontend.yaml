@@ -1,6 +1,5 @@
 ---
-instance_name: 
-  - frontend
+instance_name: frontend
 group_name: frontend
 deployment_name: QA
 security_group_name: frontend
