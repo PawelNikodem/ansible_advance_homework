@@ -9,7 +9,13 @@
     regexp: '^Listen '
     insertafter: '^#Listen '
     line: 'Listen 8080'
-    
+
+- template:
+    src: templates/index.html.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: wheel
+    mode: 0644
     
 - name: start httpd
   service:
