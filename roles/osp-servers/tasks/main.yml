@@ -1,8 +1,8 @@
-  - name: Create a server instance "{{ instance_name }}"
+  - name: Create a server instance "{{ item }}"
 #    ignore_errors: yes
     os_server:
       cloud: ospcloud
-      name: "{{ instance_name }}"
+      name: "{{ item }}"
       state: present
       image: rhel-guest
       meta: "group={{ group_name }},deployment_name={{ deployment_name }}"
@@ -17,32 +17,37 @@
         curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
         cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
         {% endraw %}
-
-  - name: Add floating IP to "{{ instance_name }}"
+    loop: "{{ instance_name }}"
+      
+  - name: Add floating IP to "{{ item }}"
     os_floating_ip:
       cloud: ospcloud
       state: present
       reuse: yes
-      server: "{{ instance_name }}"
+      server: "{{ item }}"
       network: ext_network
       wait: true
       timeout: 180
     register: instancefloatingip
+    loop: "{{ instance_name }}"
   
-  - name: Start a server insance "{{ instance_name }}"
+  - name: Start a server insance "{{ item }}"
     os_server_action:
       cloud: ospcloud
       action: start
-      server: "{{ instance_name }}"
+      server: "{{ item }}"
       timeout: 100
+    loop: "{{ instance_name }}"
   
-  - name: Show "{{ instance_name }}" public IP
+  - name: Show "{{ item }}" public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
-
-  - name: Wait for "{{ instance_name }}" to be available
+    loop: "{{ instance_name }}"
+  
+  - name: Wait for "{{ item }}" to be available
     wait_for:
       host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
       port: 22
       search_regex: OpenSSH
       timeout: 600
     delegate_to: "{{ inventory_hostname }}"
+    loop: "{{ instance_name }}"
