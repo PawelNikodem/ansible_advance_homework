@@ -13,8 +13,3 @@
     src: repos_template.j2
     dest: /etc/yum.repos.d/open_three-tier-app.repo
     mode: 0644
-
-- name: install base tools and packages
-  yum:
-    name: httpd 
-    state: latest
