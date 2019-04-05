@@ -11,7 +11,12 @@
   - name: Create apps instance
     include_role:
        name: osp-servers
-       vars_from: apps.yaml
+       vars_from: app1.yaml
+##Create apps server 
+  - name: Create apps instance
+    include_role:
+       name: osp-servers
+       vars_from: app2.yaml
 ##Create appdbs server
   - name: Create appdbs instance
     include_role:
