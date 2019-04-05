@@ -1,7 +1,7 @@
   - name: Create a server instance "{{ instance_name }}"
+    ignore_errors: yes
     os_server:
       cloud: ospcloud
-      ignore_errors: yes
       name: "{{ instance_name }}"
       state: present
       image: rhel-guest
