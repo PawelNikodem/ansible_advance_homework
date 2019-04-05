@@ -4,10 +4,9 @@
   roles:
     - name: osp-facts
 
-# Setup front-end load balancer tier "{{ ansible_env.USER }}"
+# Setup front-end load balancer tier
 
-
-- name: setup load-balancer tier "{{ ansible_env.USER }}"
+- name: setup load-balancer tier
   hosts: frontend
   become: yes
   roles:
