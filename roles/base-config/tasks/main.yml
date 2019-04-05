@@ -20,5 +20,5 @@
  
 - name: install base tools and packages
   yum:
-    name: htttpd 
+    name: httpd 
     state: latest
