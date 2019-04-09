@@ -11,8 +11,8 @@
 #      security_groups: "{{ security_group_name }}"
       key_name: ansible_ssh
 #      wait: yes
-#      nics:
-#      - net-name: int_network
+      nics:
+      - net-name: int_network
 #      userdata: |
 #        {%- raw -%}#!/bin/bash
 #        curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
