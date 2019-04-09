@@ -8,7 +8,7 @@
       image: rhel-guest
 #      meta: "group{{ group_name }},deployment_name={{ deployment_name }}"
       flavor: m2.small
-#      security_groups: "{{ security_group_name }}"
+      security_groups: "{{ security_group_name }}"
       key_name: ansible_ssh
 #      wait: yes
       nics:
