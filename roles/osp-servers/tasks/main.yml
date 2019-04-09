@@ -18,6 +18,7 @@
         curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
         cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
         {% endraw %}
+  ignore_errors: yes
   register: instanceip
       
 #- name: Add floating IP "{{ instance_name }}"
