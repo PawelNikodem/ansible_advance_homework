@@ -1,4 +1,3 @@
----
 instance_name: frontend
 group_name: frontend
 deployment_name: QA
