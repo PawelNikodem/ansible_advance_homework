@@ -3,25 +3,25 @@
 
   tasks:
 ##Create Fronend Instance
-  - name: Create frontend instance
-    include_role:
-       name: osp-servers
-       vars_from: frontend.yaml
+#  - name: Create frontend instance
+#    include_role:
+#       name: osp-servers
+#       vars_from: frontend.yaml
 ##Create apps server 
   - name: Create apps instance
     include_role:
        name: osp-servers
        vars_from: app1.yaml
 ##Create apps server 
-  - name: Create apps instance
-    include_role:
-       name: osp-servers
-       vars_from: app2.yaml
+#  - name: Create apps instance
+#    include_role:
+#       name: osp-servers
+#       vars_from: app2.yaml
 ##Create appdbs server
-  - name: Create appdbs instance
-    include_role:
-       name: osp-servers
-       vars_from: appdbs.yaml
+#  - name: Create appdbs instance
+#    include_role:
+#       name: osp-servers
+#       vars_from: appdbs.yaml
 
 ##Create Additional server
 #  - name: Create Additional instance
