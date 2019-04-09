@@ -1,4 +1,3 @@
----
 instance_name: app1
 group_name: apps
 deployment_name: QA
