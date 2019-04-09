@@ -1,4 +1,6 @@
-  - name: Create a server instance
+---
+# Create a server instance
+- name: Create a server instance
     os_server:
       cloud: ospcloud
       name: "{{ instance_name }}"
