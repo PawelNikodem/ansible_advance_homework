@@ -3,6 +3,8 @@
 - name: Create a server instance
   os_server:
       cloud: ospcloud
+      ansible_ssh_private_key_file: ~/.ssh/openstack.pem
+      ansible_ssh_user: cloud-user
       name: "{{ instance_name }}"
       state: present
       image: rhel-guest
