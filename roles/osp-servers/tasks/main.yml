@@ -3,25 +3,23 @@
 - name: Create a server instance
   os_server:
       cloud: ospcloud
-      ansible_ssh_private_key_file: ~/.ssh/openstack.pem
-      ansible_ssh_user: cloud-user
       name: "{{ instance_name }}"
       state: present
       image: rhel-guest
-      meta: "group{{ group_name }},deployment_name={{ deployment_name }}"
+#      meta: "group{{ group_name }},deployment_name={{ deployment_name }}"
       flavor: m2.small
-      security_groups: "{{ security_group_name }}"
+#      security_groups: "{{ security_group_name }}"
       key_name: ansible_ssh
-      wait: yes
-      nics:
-      - net-name: int_network
-      userdata: |
-        {%- raw -%}#!/bin/bash
-        curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-        cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-        {% endraw %}
-  ignore_errors: yes
-  register: instanceip
+#      wait: yes
+#      nics:
+#      - net-name: int_network
+#      userdata: |
+#        {%- raw -%}#!/bin/bash
+#        curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+#        cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+#        {% endraw %}
+#  ignore_errors: yes
+#  register: instanceip
       
 #- name: Add floating IP "{{ instance_name }}"
 #  os_floating_ip:
