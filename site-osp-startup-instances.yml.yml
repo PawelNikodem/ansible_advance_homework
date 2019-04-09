@@ -11,5 +11,6 @@
         timeout: 100
       loop:
         - frontend
-        - apps
+        - app1
+        - app2
         - appdbs
