@@ -19,7 +19,7 @@
 #        cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
 #        {% endraw %}
 #  ignore_errors: yes
-#  register: instanceip
+  register: instanceip
       
 #- name: Add floating IP "{{ instance_name }}"
 #  os_floating_ip:
