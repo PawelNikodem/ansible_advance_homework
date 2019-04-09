@@ -1,6 +1,7 @@
 ---
 - hosts: workstation
   become: yes
+  
   - name: Create m2.small flavor
     os_nova_flavor:
       cloud: ospcloud
