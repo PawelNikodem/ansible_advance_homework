@@ -1,5 +1,24 @@
 - hosts: frontend
   gather_facts: false
+
   tasks:
-  - name: Use Uri module for wrting smoke test.
-  - name: Fail if 'Ansible has done its job' is not in the page content
+  - name: OpenStack servers
+    os_server_facts:
+      cloud: ospcloud
+      server: 'frontend'
+    register: openstack_info
+    tags:
+      - aws.smoke
+  - name: Curl website
+    uri:
+      url: "http://{{item.public_v4}}"
+      return_content: yes
+    with_items:
+      - "{{ openstack_info.ansible_facts.openstack_servers }}"
+    register: webpage
+  
+  - name: Fail if 'Welcome to MitziCom' is not in the page content
+    fail:
+    when: "'Welcome to MitziCom' not in webpage.results[0].content"
+    tags:
+      - aws.smoke
