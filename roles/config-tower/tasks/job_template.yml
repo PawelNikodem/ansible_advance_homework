@@ -4,7 +4,7 @@
 
 - name: Associate IG to OSP instances job template 
   command: |
-    tower-cli job_template associate_ig --job_template "{{job_template_name_osp_instances}}" --instance_group "{{instance_group_name}}"
+    tower-cli job_template associate_ig --job-template "{{job_template_name_osp_instances}}" --instance-group "{{instance_group_name}}"
 
 
 - name: Create vault credential
