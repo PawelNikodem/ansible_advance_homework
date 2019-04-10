@@ -35,6 +35,7 @@
       service:
         name: httpd
         state: restarted
+
 - name: setup database tier
   become: yes
   hosts: appdbs
