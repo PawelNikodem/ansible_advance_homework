@@ -24,7 +24,7 @@
     register: webpage
   - name: Fail
     fail:
-    when: "'MitziCom' not in webpage.results[0].stdout" 
+    when: "'Welcome to MitziCom' not in webpage.results[0].stdout" 
 
   
 - hosts: localhost
@@ -36,6 +36,6 @@
   - debug: var=webpage.stdout
   - name: Fail
     fail:
-    when: "'MitziCom' not in webpage.stdout" 
+    when: "'Welcome to MitziCom' not in webpage.stdout" 
   - name: Success
     debug: msg="Congrats Yours HW Assignment is completed"
