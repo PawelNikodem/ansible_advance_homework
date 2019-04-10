@@ -1,13 +1,12 @@
 - hosts: tag_AnsibleGroup_frontends
-  gather_facts: false
+  gather_facts: true
   tasks:
   
   - name: Curl website
     uri:
-      url: "http://{{item.public_v4}}"
+      url: "http://{{ansible_default_ipv4.address}}"
       return_content: yes
-    with_items:
-      - "{{ openstack_info.ansible_facts.openstack_servers }}"
+   
     register: webpage
   
   - name: Fail if 'Welcome to MitziCom' is not in the page content
