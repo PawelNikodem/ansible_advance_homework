@@ -24,18 +24,18 @@
     register: webpage
   - name: Fail
     fail:
-    when: "'Welcome to MitziCom' not in webpage.results[0].stdout" 
+    when: "'Ansible' not in webpage.results[0].stdout" 
 
   
-- hosts: tag_AnsibleGroup_frontends
+- hosts: localhost
   gather_facts: false
   tasks:
   - name: Curl website
-    command: curl "http://{{ inventory_hostname }}"
+    command: curl "http://frontend1.{{ ANSIBLE_ADVANCE_GUID }}.example.opentlc.com"
     register: webpage
   - debug: var=webpage.stdout
   - name: Fail
     fail:
-    when: "'Welcome to MitziCom' not in webpage.stdout" 
+    when: "'Ansible' not in webpage.stdout" 
   - name: Success
     debug: msg="Congrats Yours HW Assignment is completed"
