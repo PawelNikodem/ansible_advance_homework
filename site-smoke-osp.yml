@@ -16,8 +16,8 @@
       - "{{ openstack_info.ansible_facts.openstack_servers }}"
     register: webpage
   
-  - name: Fail if 'Welcome to MitziCom' is not in the page content
+  - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
-    when: "'Welcome to MitziCom' not in webpage.results[0].content"
+    when: "'MitziCom Home Page' not in webpage.results[0].content"
     tags:
       - osp.smoke
