@@ -1,14 +1,16 @@
 - hosts: tag_AnsibleGroup_frontends
-  gather_facts: true
+  gather_facts: false
   
   tasks:
   
   - name: Curl website
     uri:
-      url: "http://{{ansible_default_ipv4.address}}"
+      url: http://"{{ item }}"
       return_content: yes
     register: webpage
-    
+    with_items:
+      - "{{ inventory_hostname }}"
+        
   - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
     when: "'MitziCom Home Page' not in webpage.results[0].content"
