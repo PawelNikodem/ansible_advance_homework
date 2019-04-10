@@ -5,12 +5,10 @@
   
   - name: Curl website
     uri:
-      url: http://"{{ item }}"
+      url: "http://{{ inventory_hostname }}"
       return_content: yes
     register: webpage
-    with_items:
-      - "{{ inventory_hostname }}"
-        
+         
   - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
     when: "'MitziCom Home Page' not in webpage.results[0].content"
