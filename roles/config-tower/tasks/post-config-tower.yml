@@ -43,12 +43,9 @@
     #id                                      name                                      inventory enabled
     #== ============================================================================== ========= =======
     #1 localhost                                                                              1    true
-    #5 [u'workstation-c33c.rhpds.opentlc.com', u'workstation-193a.rhpds.opentlc.com']         3    true
-    #4 workstation-193a.rhpds.opentlc.com                                                     3    true
     #2 workstation-c33c.rhpds.opentlc.com                                                     2    true
-    #3 workstation-c33c.rhpds.opentlc.com                                                     3    true
     #== ============================================================================== ========= =======
-    tower-cli host associate --host 5 --group 2
+    tower-cli host associate --host "{{host_name}}" --group 2
 
 - name: Tower Creds key file
   tower_credential:
