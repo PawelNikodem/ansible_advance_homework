@@ -11,5 +11,6 @@
   
   - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
-    when: "'MitziCom Home Page' not in webpage"
-  
+    when: "'MitziCom Home Page' not in webpage.results[0].content"
+    tags:
+      - aws.smoke
