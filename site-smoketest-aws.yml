@@ -8,7 +8,9 @@
       url: "http://{{ inventory_hostname }}"
       return_content: yes
     register: webpage
-         
+  
+  debug: webpage
   - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
     when: "'MitziCom Home Page' not in webpage.results[0].content"
+  
