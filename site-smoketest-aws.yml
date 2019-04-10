@@ -1,4 +1,4 @@
-- hosts: frontend
+- hosts: tag_AnsibleGroup_frontends
   gather_facts: false
   tasks:
   
