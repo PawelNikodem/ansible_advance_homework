@@ -12,5 +12,3 @@
   - name: Fail if 'Welcome to MitziCom' is not in the page content
     fail:
     when: "'Welcome to MitziCom' not in webpage.results[0].content"
-    tags:
-      - aws.smoke
