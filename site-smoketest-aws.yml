@@ -1,5 +1,6 @@
 - hosts: tag_AnsibleGroup_frontends
   gather_facts: true
+  debug: "{{ ansible_default_ipv4.address }}"
   tasks:
   
   - name: Curl website
@@ -8,7 +9,7 @@
       return_content: yes
    
     register: webpage
-    debug: "{{ ansible_default_ipv4.address }}"
+    debug: "{{ webpage }}"
   - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
     when: "'MitziCom Home Page' not in webpage.results[0].content"
