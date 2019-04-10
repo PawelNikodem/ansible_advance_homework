@@ -1,4 +1,4 @@
- - hosts: localhost
+ - hosts: frontend
    gather_facts: false
    tasks:
    - name: Curl website
