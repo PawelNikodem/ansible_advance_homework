@@ -11,7 +11,12 @@
   - name: Create apps instance
     include_role:
        name: osp-instance-delete
-       vars_from: apps.yaml
+       vars_from: app1.yaml
+##Deletes App1 server 
+  - name: Create apps instance
+    include_role:
+       name: osp-instance-delete
+       vars_from: app2.yaml
 ##Deletes App2 server
   - name: Create appdbs instance
     include_role:
