@@ -14,3 +14,34 @@
         - app1
         - app2
         - appdbs
+ 
+- name: Start services haproxy
+  hosts: frontend
+  become: yes
+  
+  tasks:
+    - name: start haproxy
+      service:
+        name: haproxy
+        state: restarted
+
+- name: Start apps tier
+  hosts: apps
+  become: yes
+  gather_facts: false
+  
+  tasks:
+    - name: start httpd
+      service:
+        name: httpd
+        state: restarted
+- name: setup database tier
+  become: yes
+  hosts: appdbs
+  
+  tasks:
+    - name: restart postgresql
+      service:
+        name: postgresql
+        state: restarted 
+        sleep: 5
