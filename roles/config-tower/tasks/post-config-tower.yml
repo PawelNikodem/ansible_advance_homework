@@ -29,7 +29,7 @@
 
 - name: Associate workstation host to group 
   command: | 
-    tower-cli host associate --host "{{host_name}}" --group "{{group_name}}"
+    tower-cli host associate --inventory "{{static_inventory_name}}" --host "{{host_name}}" --group "{{group_name}}"
 
 
 - name: Tower Creds key file
