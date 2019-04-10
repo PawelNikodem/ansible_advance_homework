@@ -45,7 +45,7 @@
 #    # 1 localhost                                                                              1    true
 #    # 2 workstation-c33c.rhpds.opentlc.com                                                     2    true
 #    # == ============================================================================== ========= =======
-    tower-cli host associate --host "{{host_name}}" --group 2
+    tower-cli host associate --host 2 --group 2
 
 - name: Tower Creds key file
   tower_credential:
