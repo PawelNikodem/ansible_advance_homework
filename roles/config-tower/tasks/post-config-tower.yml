@@ -27,9 +27,9 @@
   command: |
     tower-cli host create --inventory "{{static_inventory_name}}" --name "{{host_name}}"
 
-- name: Associate workstation host to group 
-  command: | 
-    tower-cli host associate --host "{{host_name}}" --group "{{group_name}}"
+#- name: Associate workstation host to group 
+#  command: | 
+#    tower-cli host associate --host "{{host_name}}" --group "{{group_name}}"
 #    #
 #    # tower-cli group list
 #    # == =========== =========
