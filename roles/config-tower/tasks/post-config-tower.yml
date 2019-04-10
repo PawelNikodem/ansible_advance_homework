@@ -9,6 +9,7 @@
     organization: MitziCom
     state: present
     kind: ssh
+    tower_verify_ssl: no
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: admin
     tower_password: r3dh4t1!
