@@ -1,7 +1,10 @@
 ---
 - hosts: workstation
   become: yes
-    
+  
+  roles:
+    - name: osp-facts  
+  
   tasks:
     - name: Start a server insance
       os_server_action:
