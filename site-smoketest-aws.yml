@@ -12,4 +12,4 @@
   
   - name: Fail if 'MitziCom Home Page' is not in the page content
     fail:
-    when: "'MitziCom Home Page' not in webpage.stdout"
+    when: "'MitziCom Home Page' not in webpage.content"
