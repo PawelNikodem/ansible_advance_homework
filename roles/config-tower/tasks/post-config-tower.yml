@@ -29,22 +29,22 @@
 
 - name: Associate workstation host to group 
   command: | 
-    # tower-cli host associate --host "{{host_name}}" --group "{{group_name}}"
-    #
-    # tower-cli group list
-    # == =========== =========
-    # id    name     inventory
-    # == =========== =========
-    # 1 workstation         2
-    # 2 workstation         3
-    # == =========== =========
-    # tower-cli host list
-    # == ============================================================================== ========= =======
-    # id                                      name                                      inventory enabled
-    # == ============================================================================== ========= =======
-    # 1 localhost                                                                              1    true
-    # 2 workstation-c33c.rhpds.opentlc.com                                                     2    true
-    # == ============================================================================== ========= =======
+#    # tower-cli host associate --host "{{host_name}}" --group "{{group_name}}"
+#    #
+#    # tower-cli group list
+#    # == =========== =========
+#    # id    name     inventory
+#    # == =========== =========
+#    # 1 workstation         2
+#    # 2 workstation         3
+#    # == =========== =========
+#    # tower-cli host list
+#    # == ============================================================================== ========= =======
+#    # id                                      name                                      inventory enabled
+#    # == ============================================================================== ========= =======
+#    # 1 localhost                                                                              1    true
+#    # 2 workstation-c33c.rhpds.opentlc.com                                                     2    true
+#    # == ============================================================================== ========= =======
     tower-cli host associate --host "{{host_name}}" --group 2
 
 - name: Tower Creds key file
