@@ -27,11 +27,11 @@
     when: "'Welcome to MitziCom' not in webpage.results[0].stdout" 
 
   
-- hosts: localhost
+- hosts: tag_AnsibleGroup_frontends
   gather_facts: false
   tasks:
   - name: Curl website
-    command: curl "http://frontend1.{{ ANSIBLE_ADVANCE_GUID }}.example.opentlc.com"
+    command: curl "http://{{ inventory_hostname }}"
     register: webpage
   - debug: var=webpage.stdout
   - name: Fail
