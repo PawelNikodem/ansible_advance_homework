@@ -1,24 +1,12 @@
-- hosts: frontend
-  gather_facts: false
-
-  tasks:
-  - name: OpenStack servers
-    os_server_facts:
-      cloud: ospcloud
-      server: 'frontend'
-    register: openstack_info
-    tags:
-      - aws.smoke
-  - name: Curl website
-    uri:
-      url: "http://{{item.public_v4}}"
-      return_content: yes
-    with_items:
-      - "{{ openstack_info.ansible_facts.openstack_servers }}"
-    register: webpage
-  
-  - name: Fail if 'Welcome to MitziCom' is not in the page content
-    fail:
-    when: "'Welcome to MitziCom' not in webpage.results[0].content"
-    tags:
-      - aws.smoke
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+   - name: Curl website
+     command: curl "http://frontend1.{{ ANSIBLE_ADVANCE_GUID }}.example.opentlc.com"
+     register: webpage
+   - debug: var=webpage.stdout
+   - name: Fail
+     fail:
+     when: "'Welcome to MitziCom' not in webpage.stdout" 
+   - name: Success
+     debug: msg="Congrats Yours HW Assignment is completed"
