@@ -1,14 +1,14 @@
   After add all necessary setting in Tower, like Instance Groups, Inventories, Credentials, Projects. We can create Templates and sign to those parties, and playbooks which I have in my git https://github.com/PawelNikodem/ansible_advance_homework 
 
 Templates for OSP MitziCom environment:
--	MitziCom OSP Instances – create servers for 3Tier Apps ( or Provision QA Env )	
--	MitziCom OSP Three-Tier Deploy – deploy 3Tier Apps ( or 3tier app deployment on QA Env )
--	MitziCom OSP Smoke Test – check 3Tier Apps ( or Smoke test QA Env )
--	MitziCom OSP Start-UP instances – start servers with apps after shutdown homework and osp environment 
--	Mitzicom OSP Remove Instance – remove all instances ( or Nuke QA Env )
+-	MitziCom OSP Instances – create servers for 3Tier Apps ( or Provision QA Env ) site-osp-instances.yml	
+-	MitziCom OSP Three-Tier Deploy – deploy 3Tier Apps ( or 3tier app deployment on QA Env ) site-3tier-app.yml
+-	MitziCom OSP Smoke Test – check 3Tier Apps ( or Smoke test QA Env )  	site-smoke-osp.yml
+-	MitziCom OSP Start-UP instances – start servers with apps after shutdown homework and osp environment  	site-osp-startup-instances.yml.yml
+-	Mitzicom OSP Remove Instance – remove all instances ( or Nuke QA Env ) site-osp-delete.yml
 
 Templates for AWS
--	Provision Prod Env – prepare AWS environment
--	SSH keys three tier app – setup credentials AWS environment
--	3 tier app on Prod – deploy 3Tier Apps AWS environment
--	Smoke test Prod env - check 3Tier Apps AWS environment
+-	Provision Prod Env – prepare AWS environment aws_provision.yml
+-	SSH keys three tier app – setup credentials AWS environment  	aws_creds.yml
+-	3 tier app on Prod – deploy 3Tier Apps AWS environment site-3tier-app.yml
+-	Smoke test Prod env - check 3Tier Apps AWS environment site-smoketest-aws.yml
