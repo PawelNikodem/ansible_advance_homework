@@ -17,7 +17,7 @@
         - app1
         - app2
     - name: sleep for 300 seconds and continue with play
-        wait_for: timeout=300
+      wait_for: timeout=300
  
 - name: Start services haproxy
   hosts: frontend
