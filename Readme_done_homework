@@ -1,0 +1,14 @@
+  After add all necessary setting in Tower, like Instance Groups, Inventories, Credentials, Projects. We can create Templates and sign to those parties, and playbooks which I have in my git https://github.com/PawelNikodem/ansible_advance_homework 
+
+Templates for OSP MitziCom environment:
+-	MitziCom OSP Instances – create servers for 3Tier Apps ( or Provision QA Env )	
+-	MitziCom OSP Three-Tier Deploy – deploy 3Tier Apps ( or 3tier app deployment on QA Env )
+-	MitziCom OSP Smoke Test – check 3Tier Apps ( or Smoke test QA Env )
+-	MitziCom OSP Start-UP instances – start servers with apps after shutdown homework and osp environment 
+-	Mitzicom OSP Remove Instance – remove all instances ( or Nuke QA Env )
+
+Templates for AWS
+-	Provision Prod Env – prepare AWS environment
+-	SSH keys three tier app – setup credentials AWS environment
+-	3 tier app on Prod – deploy 3Tier Apps AWS environment
+-	Smoke test Prod env - check 3Tier Apps AWS environment
