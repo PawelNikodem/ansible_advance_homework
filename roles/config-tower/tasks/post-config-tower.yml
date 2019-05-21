@@ -6,11 +6,11 @@
 - name: Machine Credentail to connect to workstation using openstack.pub
   tower_credential:
     name: Connect_to_workstation
-    organization: MitziCom
+    organization: ELK
     state: present
     kind: ssh
     tower_verify_ssl: no
-    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    tower_host: tower2.{{tower_GUID}}.example.opentlc.com
     tower_username: admin
     tower_password: r3dh4t1!
     username: cloud-user
@@ -50,10 +50,10 @@
 - name: Tower Creds key file
   tower_credential:
     name: "{{ opentlc_cred_name }}"
-    organization: MitziCom
+    organization: ELK
     state: present
     kind: ssh
-    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    tower_host: tower2.{{tower_GUID}}.example.opentlc.com
     tower_username: admin
     tower_password: r3dh4t1!
     tower_verify_ssl: no
